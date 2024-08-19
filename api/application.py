@@ -1,7 +1,7 @@
 from flask import Flask, jsonify
 import random
 
-app = Flask(__name__)
+application = Flask(__name__)
 
 # List of quotes
 quotes = [
@@ -12,11 +12,11 @@ quotes = [
     "It is pitch dark. You are likely to be eaten by a grue."
 ]
 
-@app.route('/api/quote', methods=['GET'])
+@application.route('/api/quote', methods=['GET'])
 def get_quote():
     # Select a random quote
     selected_quote = random.choice(quotes)
     return jsonify({'quote': selected_quote})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    application.run(debug=True)
