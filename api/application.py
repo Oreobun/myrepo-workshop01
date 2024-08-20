@@ -1,7 +1,11 @@
 from flask import Flask, jsonify
+from flask_cors import CORS
 import random
 
 application = Flask(__name__)
+
+# Enable CORS for all origins
+CORS(application)
 
 # List of quotes
 quotes = [
